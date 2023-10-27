@@ -94,8 +94,20 @@ html{
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
     border: 1px solid black;
     border-radius: 5px;
-
+    cursor: pointer;
+    margin: 15px 0;;
 }
 img{
     width: 150px;
+}
+
+#features .fe-box:hover{
+    box-shadow: 10px 10px 60px rgba(44, 35, 227, 0.7);
+}
+#features .fe-box h6{
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: cyan;
+    background-color: bisque;
 }
