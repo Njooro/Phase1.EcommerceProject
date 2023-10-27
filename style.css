@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+/* body{
+
+} */
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: cadetblue;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.logo{
+    color: plum;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#navbarList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbarList li{
+    padding: 0 20px;
+    list-style: none;
+    
+}
+
+#navbarList li a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: plum;
+    transition: 0.5s ease;
+}
+#navbarList li a:hover{
+    color:aqua;
+
+}
+
+#shopNow{
+    background-image: url("https://media.istockphoto.com/id/1423554620/photo/beautiful-emotional-woman.jpg?s=612x612&w=0&k=20&c=Lasup_vQtkSCtnTOfV--n-dkAJ5EsI4_ilL2ZYZetwc=");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+#shopNow h4{
+    padding-bottom: 15px;
+}
+#shopNow h2{
+    color: darkturquoise;
+}
+#shopNowBtn{
+    background-color: lightskyblue;
+    color: aliceblue;
+    border-radius: 45%;
+    border: none;
+}
+.sectFeatures{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#h1Title{
+    color: olive;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#features .fe-box {
+    width:180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+img{
+    width: 150px;
+}
