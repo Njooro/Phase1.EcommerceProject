@@ -20,7 +20,12 @@ async function getProductsByCategory(category) {
   }
 }
 
+let cart = [];
 
+function addToCart(product) {
+  cart.push(product);
+  console.log(`Added ${product.title} to cart.`);
+}
 
 async function displayProducts(category) {
   try {
@@ -55,28 +60,39 @@ async function displayProducts(category) {
       const buttonContainer = document.createElement("div");
       buttonContainer.classList.add("button-container");
 
-      const purchaseButton = document.createElement("button");
-      purchaseButton.classList.add("action-button");
-      purchaseButton.innerText = "Purchase";
-      // Add purchase button functionality here
+      
+
+     
 
       const likeButton = document.createElement("button");
       likeButton.classList.add("action-button");
       likeButton.innerText = "Like";
+
+      likeButton.addEventListener('click', () => {
+        likeButton.classList.toggle("liked");
+      });
       // Add like button functionality here
 
       const cartButton = document.createElement("button");
       cartButton.classList.add("action-button");
-      cartButton.innerText = "Add to Cart";
-      // Add cart button functionality here
+      const cartIcon = document.createElement("i");
+      cartIcon.classList.add("bi", "bi-cart-plus");
+      cartButton.appendChild(cartIcon);
+      cartButton.appendChild(document.createTextNode(" Add to Cart"));
 
-      buttonContainer.appendChild(purchaseButton);
+      cartButton.addEventListener('click', () => {
+        addToCart(product);
+      });
+
+    
       buttonContainer.appendChild(likeButton);
       buttonContainer.appendChild(cartButton);
 
       productCard.appendChild(buttonContainer);
 
       categoryBar.appendChild(productCard);
+
+      
     });
   } catch (error) {
     console.error(`Error displaying products in category ${category}:`, error);

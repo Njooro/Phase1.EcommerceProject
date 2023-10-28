@@ -165,4 +165,12 @@ img{
     cursor: pointer;
   }
   
+/* ... your existing CSS rules ... */
+
+.action-button.liked {
+    background-color: red;
+    color: #fff;
+  }
   
+  /* ... your existing CSS rules ... */
+    
