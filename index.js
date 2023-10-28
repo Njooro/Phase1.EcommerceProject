@@ -148,5 +148,10 @@ const shopNowButton = document.getElementById("shopNowBtn");
 
 // Event listener to navigate to the products page when Shop Now button is clicked
 shopNowButton.addEventListener("click", () => {
-  window.location.href = "products.html"; // Replace "products.html" with your actual products page URL
+  window.location.href = "products.html"; 
 });
+
+
+
+
+
