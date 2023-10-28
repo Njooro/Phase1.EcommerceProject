@@ -152,7 +152,13 @@ shopNowButton.addEventListener("click", () => {
 
 
 
-let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+
+
+
+// ... your existing code ...
+
+let cartItems = [];
 
 function displayCart() {
     const modal = document.getElementById("cartModal");
@@ -173,21 +179,17 @@ function closeCartModal() {
 
 function addToCart(product) {
     cartItems.push(product);
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
     const cartLink = document.querySelector('#navbarList li:nth-child(6) a');
     cartLink.textContent = `Cart (${cartItems.length})`;
     console.log(`Added ${product.title} to cart.`);
 }
 
 function purchaseItems() {
-   
+    // Perform purchase logic here
     console.log("Purchasing items:", cartItems);
     cartItems = [];
-    localStorage.removeItem("cartItems");
     const cartLink = document.querySelector('#navbarList li:nth-child(6) a');
     cartLink.textContent = `Cart (0)`;
     const cartItemsList = document.getElementById("cartItems");
     cartItemsList.innerHTML = "";
 }
-
-
