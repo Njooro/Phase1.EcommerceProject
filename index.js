@@ -99,8 +99,6 @@ async function displayProducts(category) {
   }
 }
 
-// ... your existing JavaScript code ...
-
 
 async function getCategories() {
   try {
@@ -153,5 +151,43 @@ shopNowButton.addEventListener("click", () => {
 
 
 
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+function displayCart() {
+    const modal = document.getElementById("cartModal");
+    modal.style.display = "block";
+    const cartItemsList = document.getElementById("cartItems");
+    cartItemsList.innerHTML = "";
+    cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item.title;
+        cartItemsList.appendChild(li);
+    });
+}
+
+function closeCartModal() {
+    const modal = document.getElementById("cartModal");
+    modal.style.display = "none";
+}
+
+function addToCart(product) {
+    cartItems.push(product);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const cartLink = document.querySelector('#navbarList li:nth-child(6) a');
+    cartLink.textContent = `Cart (${cartItems.length})`;
+    console.log(`Added ${product.title} to cart.`);
+}
+
+function purchaseItems() {
+   
+    console.log("Purchasing items:", cartItems);
+    cartItems = [];
+    localStorage.removeItem("cartItems");
+    const cartLink = document.querySelector('#navbarList li:nth-child(6) a');
+    cartLink.textContent = `Cart (0)`;
+    const cartItemsList = document.getElementById("cartItems");
+    cartItemsList.innerHTML = "";
+}
 
 
