@@ -20,7 +20,7 @@ async function getProductsByCategory(category) {
   }
 }
 
-// ... your existing JavaScript code ...
+
 
 async function displayProducts(category) {
   try {
