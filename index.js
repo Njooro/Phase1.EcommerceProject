@@ -20,6 +20,8 @@ async function getProductsByCategory(category) {
   }
 }
 
+// ... your existing JavaScript code ...
+
 async function displayProducts(category) {
   try {
     const products = await getProductsByCategory(category);
@@ -27,31 +29,62 @@ async function displayProducts(category) {
     categoryBar.innerHTML = "";
 
     products.forEach(product => {
-      const productDiv = document.createElement("div");
-
-      const title = document.createElement("h3");
-      title.innerText = product.title;
-      productDiv.appendChild(title);
-
-      const price = document.createElement("p");
-      price.innerText = `Price: $${product.price}`;
-      productDiv.appendChild(price);
-
-      const description = document.createElement("p");
-      description.innerText = product.description;
-      productDiv.appendChild(description);
+      const productCard = document.createElement("div");
+      productCard.classList.add("product-card");
 
       const image = document.createElement("img");
+      image.classList.add("product-image");
       image.src = product.image;
-      image.style.width = '100px'; // Adjust image width as needed
-      productDiv.appendChild(image);
+      productCard.appendChild(image);
 
-      categoryBar.appendChild(productDiv);
+      const title = document.createElement("h3");
+      title.classList.add("product-title");
+      title.innerText = product.title;
+      productCard.appendChild(title);
+
+      const price = document.createElement("p");
+      price.classList.add("product-price");
+      price.innerText = `Price: $${product.price}`;
+      productCard.appendChild(price);
+
+      const description = document.createElement("p");
+      description.classList.add("product-description");
+      description.innerText = product.description;
+      productCard.appendChild(description);
+
+      const buttonContainer = document.createElement("div");
+      buttonContainer.classList.add("button-container");
+
+      const purchaseButton = document.createElement("button");
+      purchaseButton.classList.add("action-button");
+      purchaseButton.innerText = "Purchase";
+      // Add purchase button functionality here
+
+      const likeButton = document.createElement("button");
+      likeButton.classList.add("action-button");
+      likeButton.innerText = "Like";
+      // Add like button functionality here
+
+      const cartButton = document.createElement("button");
+      cartButton.classList.add("action-button");
+      cartButton.innerText = "Add to Cart";
+      // Add cart button functionality here
+
+      buttonContainer.appendChild(purchaseButton);
+      buttonContainer.appendChild(likeButton);
+      buttonContainer.appendChild(cartButton);
+
+      productCard.appendChild(buttonContainer);
+
+      categoryBar.appendChild(productCard);
     });
   } catch (error) {
     console.error(`Error displaying products in category ${category}:`, error);
   }
 }
+
+// ... your existing JavaScript code ...
+
 
 async function getCategories() {
   try {
